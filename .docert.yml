@@ -1,0 +1,15 @@
+version: 1
+services:
+  backend:
+    build: docker-compose build backend
+    test: echo "No backend tests yet"
+    deploy:
+      provider: railway
+      project: keeper-backend
+
+  frontend:
+    build: docker-compose build frontend
+    test: echo "No frontend tests yet"
+    deploy:
+      provider: vercel
+      project: keeper-frontend
