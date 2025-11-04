@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for backend-crimson-bird-1005 on 2025-11-05T00:08:27+02:00
+# fly.toml app configuration file generated for backend-delicate-night-9290 on 2025-11-05T00:56:56+02:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'backend-crimson-bird-1005'
+app = 'backend-delicate-night-9290'
 primary_region = 'cdg'
 
 [build]

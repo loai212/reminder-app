@@ -11,7 +11,9 @@ app.use(express.json());
 
 const db = new pg.Pool({
   connectionString: process.env.DATABASE_URL,
-  ssl: { rejectUnauthorized: false }
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
 
 // Get all notes
@@ -45,4 +47,6 @@ app.delete("/notes/:id", async (req, res) => {
   }
 });
 
-app.listen(3001, () => console.log("Server running on port 3001"));
+//  Use dynamic port for Fly.io
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
