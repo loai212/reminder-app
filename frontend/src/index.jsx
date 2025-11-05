@@ -1,15 +1,6 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import App from "./components/App";
 
-const root = ReactDOM.reactRoot(document.getElementById("root"));
-
-root.render(<App />)
-//Challenge. Render all the notes inside notes.js as a seperate Note
-//component.
-
-// If you're running this locally in VS Code use the commands:
-// npm install
-// to install the node modules and
-// npm run dev
-// to launch your react project in your browser
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);

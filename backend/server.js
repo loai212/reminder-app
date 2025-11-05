@@ -18,6 +18,12 @@ const db = new pg.Pool({
   }
 });
 
+
+app.get("/", (req, res) => {
+  res.send("Backend is running!");
+});
+
+
 // Get all notes
 app.get("/notes", async (req, res) => {
   try {
@@ -32,8 +38,11 @@ app.get("/notes", async (req, res) => {
 app.post("/notes", async (req, res) => {
   const { title, content } = req.body;
   try {
-    await db.query("INSERT INTO notes (title, content) VALUES ($1, $2)", [title, content]);
-    res.sendStatus(201);
+    const result = await db.query(
+      "INSERT INTO notes (title, content) VALUES ($1, $2) RETURNING *",
+      [title, content]
+    );
+    res.status(201).json(result.rows[0]); //  return the new note
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
