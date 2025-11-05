@@ -4,12 +4,8 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
-  font-family: "Montserrat", sans-serif;
-  background-color: #f0f2f5;
-  padding: 40px 20px;
-  color: #333;
+  background-color: red !important;
 }
 
 /* Header */
