@@ -21,4 +21,3 @@ A full-stack note-taking app built with React and Express, deployed on Fly.io wi
 - Clean separation of frontend and backend
 - Production-grade deployment with environment variables
 
-## 📂 Project Structure
