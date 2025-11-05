@@ -34,7 +34,7 @@ app.get("/notes", async (req, res) => {
   }
 });
 
-// Add a note
+// Add a notes
 app.post("/notes", async (req, res) => {
   const { title, content } = req.body;
   try {
