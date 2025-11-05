@@ -27,20 +27,15 @@ jobs:
       - name: Test frontend
         run: echo "No frontend tests yet"
 
-      - name: Install Fly.io CLI
+      - name: Install and Deploy backend to Fly.io
+        working-directory: backend
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
         run: |
           curl -L https://fly.io/install.sh | sh
           export FLYCTL_INSTALL="$HOME/.fly"
           export PATH="$FLYCTL_INSTALL/bin:$PATH"
-
-      - name: Deploy backend to Fly.io
-        working-directory: backend
-        env:
-          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
-          PATH: $HOME/.fly/bin:$PATH
-        run: flyctl deploy
+          flyctl deploy
 
       - name: Deploy frontend to Vercel
         run: |
