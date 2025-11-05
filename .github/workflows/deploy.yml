@@ -35,6 +35,7 @@ jobs:
           flyctl version
 
       - name: Deploy backend to Fly.io
+        working-directory: backend
         run: |
           export FLYCTL_INSTALL="$HOME/.fly"
           export PATH="$FLYCTL_INSTALL/bin:$PATH"
