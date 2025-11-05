@@ -4,7 +4,7 @@ A full-stack note-taking app built with React and Express, deployed on Fly.io wi
 
 ## 🚀 Live Demo
 
-[Visit the app](https://reminder-app.vercel.app)
+[Visit the app](https://reminder-app-nkha.vercel.app/)
 
 ## 🛠️ Tech Stack
 
